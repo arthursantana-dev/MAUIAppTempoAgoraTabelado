@@ -22,55 +22,52 @@
 
             <Label x:Name="lbl_previsao" />
 
+
+            <ListView x:Name="list_tempos">
+
+                <ListView.Header>
+                    <Grid ColumnDefinitions="*, *, *, *, *, *, *, *, *, *">
+                        <Label Grid.Column="0" Text="Local"/>
+                        <Label Grid.Column="1" Text="Temperatura"/>
+                        <Label Grid.Column="2" Text="Vento"/>
+                        <Label Grid.Column="3" Text="Umidade"/>
+                        <Label Grid.Column="4" Text="Visibilidade"/>
+                        <Label Grid.Column="5" Text="Nascer do Sol"/>
+                        <Label Grid.Column="6" Text="Pôr do Sol"/>
+                        <Label Grid.Column="7" Text="Clima"/>
+                        <Label Grid.Column="8" Text="Descrição Clima"/>
+                        <Label Grid.Column="9" Text="Data"/>
+
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid RowDefinitions="Auto"
+                          ColumnDefinitions="3*, 3*, 3*, 3*, 3*, 3*, 3*, 3*, 3*, 3*">
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Temperature}"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Wind}"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding Humidity}"/>
+                                <Label Grid.Row="0" Grid.Column="4" Text="{Binding Visibility}"/>
+                                <Label Grid.Row="0" Grid.Column="5" Text="{Binding Sunrise}"/>
+                                <Label Grid.Row="0" Grid.Column="6" Text="{Binding Sunset}"/>
+                                <Label Grid.Row="0" Grid.Column="7" Text="{Binding Weather}"/>
+                                <Label Grid.Row="0" Grid.Column="8" Text="{Binding WeatherDescription}"/>
+                                <Label Grid.Row="0" Grid.Column="9" Text="{Binding Created}"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
 
 
-        <ListView x:Name="list_tempos" 
-                  <!--ItemSelected=""-->
-                  >
-            <ListView.Header>
-                <Grid ColumnDefinitions="*, *, *, *, *, *, *, *, *, *">
-                    <Label Grid.Column="0" Text="Local"/>
-                    <Label Grid.Column="1" Text="Temperatura"/>
-                    <Label Grid.Column="2" Text="Vento"/>
-                    <Label Grid.Column="3" Text="Umidade"/>
-                    <Label Grid.Column="4" Text="Visibilidade"/>
-                    <Label Grid.Column="5" Text="Nascer do Sol"/>
-                    <Label Grid.Column="6" Text="Pôr do Sol"/>
-                    <Label Grid.Column="7" Text="Clima"/>
-                    <Label Grid.Column="8" Text="Descrição Clima"/>
-                    <Label Grid.Column="9" Text="Data"/>
-
-                </Grid>
-            </ListView.Header>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-
-                        <!--<ViewCell.ContextActions>
-                            <MenuItem Text="Remover" 
-                                      Clicked=""
-                                      />
-                        </ViewCell.ContextActions>-->
-                        <Grid RowDefinitions="Auto"
-                                  ColumnDefinitions="*, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
-                            
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Local}"/>
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Temperatura}"/>
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Vento}"/>
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Umidade}"/>
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Visibilidade}"/>
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding NascerDoSol}"/>
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding PorDoSol}"/>
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Clima}"/>
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding DescricaoClima}"/>
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Data}"/>
-
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        
     </ScrollView>
 
 </ContentPage>
